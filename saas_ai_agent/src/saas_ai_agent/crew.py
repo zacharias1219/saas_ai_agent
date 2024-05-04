@@ -26,7 +26,7 @@ class SaaSCrew:
 
         # OpenAI
         self.ollama_llm = ChatOpenAI(
-            model="davinci",
+            model="mistral",
             base_url="http://localhost:11434/v1",
             api_key="ollama",
             temperature=0,
@@ -40,7 +40,7 @@ class SaaSCrew:
             config=self.agents_config["market_analyst"],
             tools=[SaasDataTool()],
             allow_delegation=False,
-            llm=self.openai_llm,
+            llm=self.ollama_llm,
             verbose=True,
         )
 
@@ -52,7 +52,7 @@ class SaaSCrew:
             config=self.agents_config["technology_architect"],
             tools=[TechnologyTool()],
             allow_delegation=False,
-            llm=self.openai_llm,
+            llm=self.ollama_llm,
             verbose=True,
         )
 
@@ -62,7 +62,7 @@ class SaaSCrew:
         """Agent responsible for designing the user interface."""
         return Agent(
             config=self.agents_config["ux_designer"],
-            llm=self.openai_llm,
+            llm=self.ollama_llm,
             allow_delegation=False,
             verbose=True,
         )
@@ -73,7 +73,7 @@ class SaaSCrew:
         """Agent responsible for ensuring product compliance."""
         return Agent(
             config=self.agents_config["compliance_officer"],
-            llm=self.openai_llm,
+            llm=self.ollama_llm,
             allow_delegation=False,
             verbose=True,
         )
@@ -85,7 +85,7 @@ class SaaSCrew:
         return Agent(
             config=self.agents_config["financial_analyst"],
             tools=[FinancialTool()],
-            llm=self.openai_llm,
+            llm=self.ollama_llm,
             allow_delegation=False,
             verbose=True,
         )
@@ -96,7 +96,7 @@ class SaaSCrew:
         """Agent responsible for implementing agile methodologies."""
         return Agent(
             config=self.agents_config["agile_coach"],
-            llm=self.openai_llm,
+            llm=self.ollama_llm,
             allow_delegation=False,
             verbose=True,
         )
@@ -107,7 +107,7 @@ class SaaSCrew:
         """Agent responsible for setting up and managing customer support."""
         return Agent(
             config=self.agents_config["customer_support_manager"],
-            llm=self.openai_llm,
+            llm=self.ollama_llm,
             allow_delegation=False,
             verbose=True,
         )
@@ -118,7 +118,7 @@ class SaaSCrew:
         """Agent responsible for developing and executing marketing strategies."""
         return Agent(
             config=self.agents_config["marketing_strategist"],
-            llm=self.openai_llm,
+            llm=self.ollama_llm,
             allow_delegation=False,
             verbose=True,
         )
