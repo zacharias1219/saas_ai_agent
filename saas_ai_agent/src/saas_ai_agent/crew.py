@@ -39,6 +39,7 @@ class SaaSCrew:
         return Agent(
             config=self.agents_config["market_analyst"],
             tools=[SaasDataTool()],
+            allow_delegation=False,
             llm=self.openai_llm,
             verbose=True,
         )
@@ -50,6 +51,7 @@ class SaaSCrew:
         return Agent(
             config=self.agents_config["technology_architect"],
             tools=[TechnologyTool()],
+            allow_delegation=False,
             llm=self.openai_llm,
             verbose=True,
         )
@@ -61,6 +63,7 @@ class SaaSCrew:
         return Agent(
             config=self.agents_config["ux_designer"],
             llm=self.openai_llm,
+            allow_delegation=False,
             verbose=True,
         )
 
@@ -71,6 +74,7 @@ class SaaSCrew:
         return Agent(
             config=self.agents_config["compliance_officer"],
             llm=self.openai_llm,
+            allow_delegation=False,
             verbose=True,
         )
 
@@ -82,6 +86,7 @@ class SaaSCrew:
             config=self.agents_config["financial_analyst"],
             tools=[FinancialTool()],
             llm=self.openai_llm,
+            allow_delegation=False,
             verbose=True,
         )
 
@@ -92,6 +97,7 @@ class SaaSCrew:
         return Agent(
             config=self.agents_config["agile_coach"],
             llm=self.openai_llm,
+            allow_delegation=False,
             verbose=True,
         )
 
@@ -102,6 +108,7 @@ class SaaSCrew:
         return Agent(
             config=self.agents_config["customer_support_manager"],
             llm=self.openai_llm,
+            allow_delegation=False,
             verbose=True,
         )
 
@@ -112,6 +119,7 @@ class SaaSCrew:
         return Agent(
             config=self.agents_config["marketing_strategist"],
             llm=self.openai_llm,
+            allow_delegation=False,
             verbose=True,
         )
 
@@ -119,7 +127,7 @@ class SaaSCrew:
     def perform_market_analysis_task(self) -> Task:
         """Task to perform market analysis."""
         return Task(
-            config=self.tasks_config["perform_market_analysis_task"],
+            config=self.tasks_config["market_research_task"],
             agent=self.market_analyst(),
             output_file="market_analysis.md",
         )
@@ -128,7 +136,7 @@ class SaaSCrew:
     def select_technology_task(self) -> Task:
         """Task to select the appropriate technology stack."""
         return Task(
-            config=self.tasks_config["select_technology_task"],
+            config=self.tasks_config["technology_selection_task"],
             agent=self.technology_architect(),
             output_file="technology_selection.md",
         )
@@ -137,7 +145,7 @@ class SaaSCrew:
     def design_ui_task(self) -> Task:
         """Task to design the user interface."""
         return Task(
-            config=self.tasks_config["design_ui_task"],
+            config=self.tasks_config["ux_design_task"],
             agent=self.ux_designer(),
             output_file="ui_design.md",
         )
@@ -146,7 +154,7 @@ class SaaSCrew:
     def ensure_compliance_task(self) -> Task:
         """Task to ensure compliance with regulations."""
         return Task(
-            config=self.tasks_config["ensure_compliance_task"],
+            config=self.tasks_config["compliance_audit_task"],
             agent=self.compliance_officer(),
             output_file="compliance_report.md",
         )
@@ -155,7 +163,7 @@ class SaaSCrew:
     def conduct_financial_analysis_task(self) -> Task:
         """Task to conduct financial analysis."""
         return Task(
-            config=self.tasks_config["conduct_financial_analysis_task"],
+            config=self.tasks_config["financial_modeling_task"],
             agent=self.financial_analyst(),
             output_file="financial_analysis.md",
         )
@@ -164,7 +172,7 @@ class SaaSCrew:
     def implement_agile_task(self) -> Task:
         """Task to implement agile methodologies."""
         return Task(
-            config=self.tasks_config["implement_agile_task"],
+            config=self.tasks_config["agile_implementation_task"],
             agent=self.agile_coach(),
             output_file="agile_implementation.md",
         )
@@ -173,7 +181,7 @@ class SaaSCrew:
     def setup_customer_support_task(self) -> Task:
         """Task to set up customer support systems."""
         return Task(
-            config=self.tasks_config["setup_customer_support_task"],
+            config=self.tasks_config["customer_support_setup_task"],
             agent=self.customer_support_manager(),
             output_file="customer_support_setup.md",
         )
@@ -182,7 +190,7 @@ class SaaSCrew:
     def develop_marketing_strategy_task(self) -> Task:
         """Task to develop and execute marketing strategies."""
         return Task(
-            config=self.tasks_config["develop_marketing_strategy_task"],
+            config=self.tasks_config["marketing_campaign_task"],
             agent=self.marketing_strategist(),
             output_file="marketing_strategy.md",
         )
