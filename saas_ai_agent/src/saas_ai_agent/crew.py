@@ -25,10 +25,10 @@ class SaaSCrew:
         )
 
         # OpenAI
-        self.openai_llm = ChatOpenAI(
+        self.ollama_llm = ChatOpenAI(
             model="davinci",
-            base_url="https://api.openai.com/v1",
-            api_key=os.environ.get("OPENAI_API_KEY"),
+            base_url="http://localhost:11434/v1",
+            api_key="ollama",
             temperature=0,
         )
 
