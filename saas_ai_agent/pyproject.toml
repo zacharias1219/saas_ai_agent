@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "saas_ai_agent"
+version = "0.1.0"
+description = "saas-ai-agent using crewAI"
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<=3.13"
+crewai = {extras = ["tools"], version = "^0.28.8"}
+
+[tool.poetry.scripts]
+saas_ai_agent = "saas_ai_agent.main:run"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
