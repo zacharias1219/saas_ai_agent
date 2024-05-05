@@ -25,7 +25,7 @@ class SaasDataTool(BaseSaaSTool):
     def _run(self, query_params: dict) -> list:
         """Fetch market data from a specified API endpoint based on query parameters."""
         data_collected = []
-        base_url = "https://api.saas-market-data.com/v1/reports"  # Example API URL
+        base_url = "https://userpilot.com/blog/saas-analytics-software/"  # Example API URL
         headers = {"Accept": "application/json"}
 
         try:

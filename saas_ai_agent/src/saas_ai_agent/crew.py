@@ -38,9 +38,9 @@ class SaaSCrew:
         """Agent responsible for analyzing market trends and customer needs."""
         return Agent(
             config=self.agents_config["market_analyst"],
-            tools=[SaasDataTool()],
+            #tools=[SaasDataTool()],
             allow_delegation=False,
-            llm=self.ollama_llm,
+            llm=self.groq_llm,
             verbose=True,
         )
 
@@ -50,9 +50,9 @@ class SaaSCrew:
         """Agent responsible for selecting the appropriate technology stack."""
         return Agent(
             config=self.agents_config["technology_architect"],
-            tools=[TechnologyTool()],
+            #tools=[TechnologyTool()],
             allow_delegation=False,
-            llm=self.ollama_llm,
+            llm=self.groq_llm,
             verbose=True,
         )
 
@@ -62,7 +62,7 @@ class SaaSCrew:
         """Agent responsible for designing the user interface."""
         return Agent(
             config=self.agents_config["ux_designer"],
-            llm=self.ollama_llm,
+            llm=self.groq_llm,
             allow_delegation=False,
             verbose=True,
         )
@@ -73,7 +73,7 @@ class SaaSCrew:
         """Agent responsible for ensuring product compliance."""
         return Agent(
             config=self.agents_config["compliance_officer"],
-            llm=self.ollama_llm,
+            llm=self.groq_llm,
             allow_delegation=False,
             verbose=True,
         )
@@ -84,8 +84,8 @@ class SaaSCrew:
         """Agent responsible for financial planning and analysis."""
         return Agent(
             config=self.agents_config["financial_analyst"],
-            tools=[FinancialTool()],
-            llm=self.ollama_llm,
+            #tools=[FinancialTool()],
+            llm=self.groq_llm,
             allow_delegation=False,
             verbose=True,
         )
@@ -96,7 +96,7 @@ class SaaSCrew:
         """Agent responsible for implementing agile methodologies."""
         return Agent(
             config=self.agents_config["agile_coach"],
-            llm=self.ollama_llm,
+            llm=self.groq_llm,
             allow_delegation=False,
             verbose=True,
         )
@@ -107,7 +107,7 @@ class SaaSCrew:
         """Agent responsible for setting up and managing customer support."""
         return Agent(
             config=self.agents_config["customer_support_manager"],
-            llm=self.ollama_llm,
+            llm=self.groq_llm,
             allow_delegation=False,
             verbose=True,
         )
@@ -118,7 +118,7 @@ class SaaSCrew:
         """Agent responsible for developing and executing marketing strategies."""
         return Agent(
             config=self.agents_config["marketing_strategist"],
-            llm=self.ollama_llm,
+            llm=self.groq_llm,
             allow_delegation=False,
             verbose=True,
         )
